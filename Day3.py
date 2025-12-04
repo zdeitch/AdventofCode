@@ -39,7 +39,7 @@ def find_joltage_sum(filename):
     return sum
 
 
-#print("PART 1 SOLUTION: "find_joltage_sum('Day3File.txt'))
+print("PART 1 SOLUTION: "find_joltage_sum('Day3File.txt'))
 
 #### Part 2 
 
