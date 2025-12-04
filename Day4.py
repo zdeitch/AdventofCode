@@ -71,7 +71,8 @@ def check_all_and_remove(grid,num_adjacent):
 
 new_grid = grid
 accessible_count = 0
-while check_all(new_grid,4)!= 0:
+num_removed=-1
+while num_removed!= 0:
     new_grid, num_removed = check_all_and_remove(new_grid, 4)
     accessible_count += num_removed
 
