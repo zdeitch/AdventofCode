@@ -28,18 +28,12 @@ def find_joltage_sum(filename):
             sub_line = line[max_index1+1:]
             max2, max_index2 = findmax(sub_line, True) #int, int
             joltage = int(line[max_index1]+sub_line[max_index2])
-            print("LINE: ",line)
-            print("MAXIND1: ", max_index1)
-            print("SUB_LINE: ",sub_line)
-            print("MAXIND2: ", max_index2)
-            print(line[max_index1]+sub_line[max_index2])
-            print('\n')
         
             sum += joltage
     return sum
 
 
-print("PART 1 SOLUTION: "find_joltage_sum('Day3File.txt'))
+print("PART 1 SOLUTION: ",find_joltage_sum('Day3File.txt'))
 
 #### Part 2 
 
@@ -49,7 +43,7 @@ def findmax_2(line, spaces_to_leave):
     
     end = len(line) - spaces_to_leave
     
-    for i in range(end):   #all but last number for first one
+    for i in range(end):   
         current_character = int(line[i])
         
         if current_character > max_val: 
@@ -72,23 +66,16 @@ def find_joltage_sum_2(filename):
                 #print(line)
                 max, max_index = findmax_2(newline, 11-iteration) #int, int
                 orig_max_index = orig_max_index + max_index + 1
-                #print(newline)
-                #print("MAX "+str(iteration)+" "+ str(max))
-                #print("ORIG_MAX_INDX"+str(iteration)+" "+ str(orig_max_index))
                 max_indices.append(orig_max_index-1)
                 newline = newline[max_index+1:]
                 
                     
-            #print(max_indices)
             joltage_string = '0'
             for index in max_indices:
                 joltage_string += str(line[index])
-            #print(joltage_string)
-            #print("========================")
             joltage = int(joltage_string)
             sum += joltage
             
     return sum
 
 print("PART 2 SOLUTION: ",find_joltage_sum_2('Day3File.txt'))
-
