@@ -1,3 +1,6 @@
+# I think we can use an integer program to solve (i learned about this in math 331 Operations Research)
+# it uses a modified algorithm based on the simplex method to solve linear programs. 
+#Just need to formulate the objective function (total number of buttos pressed, to be minimized) and the constraints, namely the limits on number of button pressed, and non-negativity.
 import re
 from itertools import combinations
 import pulp
@@ -117,6 +120,9 @@ def solve_machine_part2(buttons, targets):
 total_part1 = solve_file_part1("Day10File.txt")
 print("PART 1 SOLUTION:", total_part1)
 
+## PART 2
+#we gonna do a similar approach, but instead, we can just make it so that instead,
+#we can formulate in terms of actions rather than binary, where presses are full integers
 total_part2 = 0
 file_handle = open("Day10File.txt")
 for line in file_handle:
